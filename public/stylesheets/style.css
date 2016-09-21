@@ -1,8 +1,29 @@
-/** #2A1506 chocolate brown color for navbar maybe **/
+/** #2A1506 chocolate brown color for navbar maybe & #ffe6ea pink bg**/
+#navigation {
+  background-color: #432109;
+}
+
 body {
-  background-color: #ffe6ea;
+  background-color: #d5eaf9;
+}
+
+#navigation a {
+  color: #d5eaf9;
+}
+
+#navigation a:hover{
+  color: #fff;
 }
 
 .center {
   text-align: center;
+}
+
+.jumbotron {
+  background-color: #fff;
+}
+
+#footer {
+  align-content: center;
+  height: 40px;
 }
