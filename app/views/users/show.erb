@@ -1,0 +1,6 @@
+<p>These are the current members of your ferret-y business, <%= @user.username %></p>
+  <% @user.ferrets.each do |tweet| %>
+    <div>
+      <%= ferret.content %>
+    </div>
+  <% end %>

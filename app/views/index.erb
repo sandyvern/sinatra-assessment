@@ -1,7 +1,12 @@
 <div class="jumbotron center">
-  <h1>Ferret Tracker</h1>
-  <h2>Welcome to my Ferret Tracking App!</h2>
-  <p>
-    Keep track of all the important details of each of your ferrets, such as name, age, color, sex and weight.
-  </p>
+  <h1>Welcome</h1>
+  <h2>to the</h2>
+  <h1>Ferret Business Tracking App!</h1>
+  
+  <% if logged_in? %>
+    <h2>Welcome Back, <%=current_user.username %>!!</h2>
+  <% else %>
+    <a class="btn btn-primary" href="/signup">Sign Up</a>
+    <a class="btn btn-default" href="/login">Log In</a>
+  <% end %>
 </div>
