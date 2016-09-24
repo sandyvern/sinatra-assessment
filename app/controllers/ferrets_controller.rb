@@ -61,7 +61,7 @@ class FerretsController < ApplicationController
 
   delete '/ferrets/:id/delete' do
     if logged_in?
-      @ferret = Tweet.find_by_id(params[:id])
+      @ferret = Ferret.find_by_id(params[:id])
       if @ferret.user_id == current_user.id
         @ferret.delete
         redirect to '/ferrets'

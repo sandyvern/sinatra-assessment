@@ -9,7 +9,7 @@ class UsersController < ApplicationController
    if !logged_in?
      erb :'users/new_user'
    else
-     redirect to '/ferrets'
+     redirect to '/ferrets/ferrets'
    end
  end
 
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
    else
      @user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
      session[:user_id] = @user.id
-     redirect to '/ferrets'
+     redirect to '/ferrets/ferrets'
    end
  end
 

@@ -1,0 +1,18 @@
+<h2>Edit Ferret Info</h2>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Edit Ferret Info</h3>
+  </div>
+  <div class="panel-body">
+    <form method="post" action="/ferrets/<%= @ferret.id %>">
+      <input id="hidden" type="hidden" name="_method" value="PATCH">
+      <input type="text" name="name" value="<%= @ferret.name %>">
+      <input type="text" name="age" value="<%= @ferret.age %>">
+      <input type="text" name="sex" value="<%= @ferret.sex %>">
+      <input type="text" name="color" value="<%= @ferret.color %>">
+      <input type="text" name="weight" value="<%= @ferret.weight %>">
+      <input type="submit" class="btn btn-primary" value="submit">
+    </form>
+  </div>
+</div>
