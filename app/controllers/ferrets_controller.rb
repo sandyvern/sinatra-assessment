@@ -18,10 +18,10 @@ class FerretsController < ApplicationController
   end
 
   post '/ferrets' do
-    if params[:content] == ""
+    if params[:name, :age, :color, :sex, :weight ] == ""
       redirect to "/ferrets/add_ferret"
     else
-      @ferret = current_user.ferrets.create(content: params[:content])
+      @ferret = current_user.ferrets.create(ferret_params)
       redirect to "/ferrets/#{@ferret.id}"
     end
   end
@@ -49,11 +49,11 @@ class FerretsController < ApplicationController
   end
 
   patch '/ferrets/:id' do
-    if params[:content] == ""
+    if ferret_params == ""
       redirect to "/ferrets/#{params[:id]}/edit"
     else
       @ferret = Ferret.find_by_id(params[:id])
-      @ferret.content = params[:content]
+      @ferret.ferret_params = ferret_params
       @ferret.save
       redirect to "/ferrets/#{@ferret.id}"
     end
@@ -71,5 +71,11 @@ class FerretsController < ApplicationController
     else
       redirect to '/login'
     end
+  end
+
+  private
+
+  def ferret_params
+    params.permit(:name, :age, :color, :sex, :weight)
   end
 end
